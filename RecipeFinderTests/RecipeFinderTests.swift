@@ -33,4 +33,61 @@ class RecipeFinderTests: XCTestCase {
         }
     }
     
+    func testAsynchCallBack() {
+        
+        let manager = RemoteDataManager()
+        
+        let expect = expectation(description: "RemoteManagerCalled and will return API data")
+        
+        manager.loadDataFromURL(url: manager.encodeQueryParameters(with: "omelete")!) { (data, error) in
+            
+            guard error == nil else {
+                XCTFail()
+                return
+            }
+            
+            manager.parsingData(recipies: [Recipe](), data: data!, completion: { (recipies, error) in
+                
+                guard error == nil else {
+                    XCTFail()
+                    return
+                }
+                
+                let recipe = recipies?.first
+                // on a real scenario this test may not be enough
+                
+                if let title: String? = recipe?.title,
+                    let ingredients: String = recipe?.ingredients,
+                    let url: String = recipe?.url,
+                    let thumbnailUrl: String = recipe?.thumbnailUrl {
+                    XCTAssertNotNil(title)
+                    XCTAssertNotNil(ingredients)
+                    XCTAssertNotNil(url)
+                    XCTAssertNotNil(thumbnailUrl)
+                } else {
+                    XCTFail("missing value in objetct")
+                }
+                
+                
+                
+                
+                XCTAssert(true)
+                expect.fulfill()
+                
+                
+            })
+            
+            
+            
+        }
+        
+        waitForExpectations(timeout: 1) { error in
+            if let error = error {
+                XCTFail("waitForExpectationsWithTimeout errored: \(error)")
+            }
+        }
+        
+    }
+
+    
 }

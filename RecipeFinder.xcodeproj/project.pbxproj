@@ -13,6 +13,10 @@
 		DAC796241F3D82530055BE64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAC796231F3D82530055BE64 /* Assets.xcassets */; };
 		DAC796271F3D82530055BE64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAC796251F3D82530055BE64 /* LaunchScreen.storyboard */; };
 		DAC796321F3D82530055BE64 /* RecipeFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC796311F3D82530055BE64 /* RecipeFinderTests.swift */; };
+		DAC796411F3D83B50055BE64 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC796401F3D83B50055BE64 /* Recipe.swift */; };
+		DAC796431F3D83F00055BE64 /* RemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC796421F3D83F00055BE64 /* RemoteDataManager.swift */; };
+		DAC796451F3D841E0055BE64 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC796441F3D841E0055BE64 /* EndPoints.swift */; };
+		DAC796471F3D842F0055BE64 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC796461F3D842F0055BE64 /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,10 @@
 		DAC7962D1F3D82530055BE64 /* RecipeFinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipeFinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAC796311F3D82530055BE64 /* RecipeFinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeFinderTests.swift; sourceTree = "<group>"; };
 		DAC796331F3D82530055BE64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAC796401F3D83B50055BE64 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		DAC796421F3D83F00055BE64 /* RemoteDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDataManager.swift; sourceTree = "<group>"; };
+		DAC796441F3D841E0055BE64 /* EndPoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
+		DAC796461F3D842F0055BE64 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +85,16 @@
 		DAC7961B1F3D82530055BE64 /* RecipeFinder */ = {
 			isa = PBXGroup;
 			children = (
+				DAC7963E1F3D838C0055BE64 /* API */,
 				DAC7961C1F3D82530055BE64 /* AppDelegate.swift */,
-				DAC7961E1F3D82530055BE64 /* ViewController.swift */,
-				DAC796201F3D82530055BE64 /* Main.storyboard */,
 				DAC796231F3D82530055BE64 /* Assets.xcassets */,
-				DAC796251F3D82530055BE64 /* LaunchScreen.storyboard */,
+				DAC7963F1F3D83940055BE64 /* DataManager */,
+				DAC7963D1F3D83840055BE64 /* Extensions */,
 				DAC796281F3D82530055BE64 /* Info.plist */,
+				DAC796251F3D82530055BE64 /* LaunchScreen.storyboard */,
+				DAC796201F3D82530055BE64 /* Main.storyboard */,
+				DAC7963C1F3D83780055BE64 /* Models */,
+				DAC7961E1F3D82530055BE64 /* ViewController.swift */,
 			);
 			path = RecipeFinder;
 			sourceTree = "<group>";
@@ -94,6 +106,38 @@
 				DAC796331F3D82530055BE64 /* Info.plist */,
 			);
 			path = RecipeFinderTests;
+			sourceTree = "<group>";
+		};
+		DAC7963C1F3D83780055BE64 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DAC796401F3D83B50055BE64 /* Recipe.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		DAC7963D1F3D83840055BE64 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DAC796461F3D842F0055BE64 /* String.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		DAC7963E1F3D838C0055BE64 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				DAC796441F3D841E0055BE64 /* EndPoints.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		DAC7963F1F3D83940055BE64 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				DAC796421F3D83F00055BE64 /* RemoteDataManager.swift */,
+			);
+			name = DataManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,8 +245,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAC796471F3D842F0055BE64 /* String.swift in Sources */,
+				DAC796411F3D83B50055BE64 /* Recipe.swift in Sources */,
+				DAC796451F3D841E0055BE64 /* EndPoints.swift in Sources */,
 				DAC7961F1F3D82530055BE64 /* ViewController.swift in Sources */,
 				DAC7961D1F3D82530055BE64 /* AppDelegate.swift in Sources */,
+				DAC796431F3D83F00055BE64 /* RemoteDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
